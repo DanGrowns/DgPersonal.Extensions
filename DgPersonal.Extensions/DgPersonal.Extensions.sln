@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DgPersonal.Extensions.General", "DgPersonal.Extensions.General\DgPersonal.Extensions.General.csproj", "{7B256117-E5D0-4E8A-81D1-DF9D43186B72}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DgPersonal.Extensions.Mvc", "DgPersonal.Extensions.Mvc\DgPersonal.Extensions.Mvc.csproj", "{AE5F8C49-23EF-4F82-90F6-B05054F572B7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7B256117-E5D0-4E8A-81D1-DF9D43186B72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B256117-E5D0-4E8A-81D1-DF9D43186B72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B256117-E5D0-4E8A-81D1-DF9D43186B72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B256117-E5D0-4E8A-81D1-DF9D43186B72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE5F8C49-23EF-4F82-90F6-B05054F572B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE5F8C49-23EF-4F82-90F6-B05054F572B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE5F8C49-23EF-4F82-90F6-B05054F572B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE5F8C49-23EF-4F82-90F6-B05054F572B7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

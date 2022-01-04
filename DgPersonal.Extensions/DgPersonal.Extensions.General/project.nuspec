@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <version>1.0.0</version>
+        <authors>Dan Growns</authors>
+        <owners>Dan Growns</owners>
+        <id>DgPersonal.Extensions.General</id>
+        <title>DgPersonal.Extensions.General</title>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <projectUrl>https://github.com/DanGrowns/DgPersonal.Extensions</projectUrl>
+        <repository type="git" url="https://github.com/DanGrowns/DgPersonal.Extensions.git" branch="main" />
+        <description>General extension methods used in multiple projects.</description>
+    </metadata>
+    <files>
+        <file src="bin\Debug\net5.0\*.dll" target="lib\net5.0" />
+        <file src="bin\Debug\net5.0\*.pdb" target="lib\net5.0" />
+    </files>
+</package>
