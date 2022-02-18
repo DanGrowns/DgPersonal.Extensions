@@ -14,10 +14,7 @@ namespace DgPersonal.Extensions.Mvc.Classes
         public static IActionResult ContentAsJson<TController>(this TController controller, object content)
             where TController : Controller, IJsonReturn
             => controller.ContentAsJson(controller, content);
-
-        public static string DataTablesJsDom() 
-            => "<'dataTables-topLeft'><'dataTables-topRight'f>t<'dataTables-bottomLeft'i><'dataTables-bottomRight'p>";
-
+        
         public static bool GetBoolViewDataValue(this ViewDataDictionary viewData, string key)
         {
             var entry = viewData[key];

@@ -8,6 +8,7 @@
         <Description>MVC Extension methods and blocks I reuse in multiple projects.</Description>
         <PackageProjectUrl>https://github.com/DanGrowns/DgPersonal.Extensions</PackageProjectUrl>
         <RepositoryUrl>https://github.com/DanGrowns/DgPersonal.Extensions.git</RepositoryUrl>
+        <PackageVersion>1.0.1</PackageVersion>
     </PropertyGroup>
 
     <ItemGroup>

@@ -9,6 +9,8 @@ namespace DgPersonal.Extensions.General.Classes
 {
     public static class ExtensionMethods
     {
+        public static bool HasValue(this string str) => string.IsNullOrWhiteSpace(str) == false;
+        
         public static string SplitPascalCaseToString(this string pascalCaseStr, bool usePluralName = false)
         {
             var r = new Regex(@"
