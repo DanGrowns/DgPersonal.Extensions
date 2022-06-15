@@ -11,7 +11,7 @@ namespace DgPersonal.Extensions.General.Classes
     {
         public static bool HasValue(this string str) => string.IsNullOrWhiteSpace(str) == false;
         
-        public static string SplitPascalCaseToString(this string pascalCaseStr, bool usePluralName = false)
+        public static string StringToPascalCase(this string pascalCaseStr, bool usePluralName = false)
         {
             var r = new Regex(@"
                 (?<=[A-Z])(?=[A-Z][a-z]) |
@@ -127,7 +127,7 @@ namespace DgPersonal.Extensions.General.Classes
                                    && value.Count(char.IsUpper) > 1;
 
                 if (isPascalCase)
-                    value = value.SplitPascalCaseToString();
+                    value = value.StringToPascalCase();
                 
                 var isLast = items.Count -1 == index;
                 sb.Append(value).Append(isLast ? "" : ", ");
@@ -135,6 +135,22 @@ namespace DgPersonal.Extensions.General.Classes
             }
 
             return sb.ToString();
+        }
+        
+        public static T GetValueOrDefault<T>(this IEnumerable<KeyValuePair<string, string>> keyValuePairs, string key)
+        {
+            var value = keyValuePairs.FirstOrDefault(x => x.Key == key).Value;
+            switch (value)
+            {
+                case null:
+                    return default;
+                
+                case T str:
+                    return str;
+            }
+
+            var obj = Convert.ChangeType(value, typeof(T));
+            return (T) obj;
         }
     }
 }

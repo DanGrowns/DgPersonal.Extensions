@@ -15,17 +15,26 @@ namespace DgPersonal.Extensions.Mvc.Classes
             where TController : Controller, IJsonReturn
             => controller.ContentAsJson(controller, content);
         
-        public static bool GetBoolViewDataValue(this ViewDataDictionary viewData, string key)
+        public static T GetViewDataValue<T>(this ViewDataDictionary viewData, string key)
         {
-            var entry = viewData[key];
-            if (entry == null)
-                return false;
+            var obj = viewData[key];
+            if (obj == null)
+                return default;
             
-            return (bool) entry;
+            return (T) obj;
         }
         
         public static bool IsHttpGet(this FilterContext context)
             => context.ActionDescriptor.EndpointMetadata.FirstOrDefault(x =>
                 x.GetType() == typeof(HttpGetAttribute)) != null;
+        
+        public static bool IsDevelopment(this ViewDataDictionary viewData)
+            => viewData.GetViewDataValue<bool>("IsDevelopment");
+        
+        public static bool IsProduction(this ViewDataDictionary viewData)
+            => viewData.IsDevelopment() == false;
+        
+        public static bool IsAdministrator(this ViewDataDictionary viewData)
+            => viewData.GetViewDataValue<bool>("IsAdministrator");
     }
 }
