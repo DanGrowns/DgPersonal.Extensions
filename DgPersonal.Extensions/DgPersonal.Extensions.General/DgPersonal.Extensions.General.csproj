@@ -8,7 +8,7 @@
         <Description>General extension methods used in multiple projects.</Description>
         <PackageProjectUrl>https://github.com/DanGrowns/DgPersonal.Extensions</PackageProjectUrl>
         <RepositoryUrl>https://github.com/DanGrowns/DgPersonal.Extensions.git</RepositoryUrl>
-        <PackageVersion>1.1.2</PackageVersion>
+        <PackageVersion>1.1.3</PackageVersion>
     </PropertyGroup>
 
 </Project>

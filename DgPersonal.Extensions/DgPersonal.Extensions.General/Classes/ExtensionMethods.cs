@@ -11,7 +11,7 @@ namespace DgPersonal.Extensions.General.Classes
     {
         public static bool HasValue(this string str) => string.IsNullOrWhiteSpace(str) == false;
         
-        public static string StringToPascalCase(this string pascalCaseStr, bool usePluralName = false)
+        public static string SplitPascalCaseToString(this string pascalCaseStr, bool usePluralName = false)
         {
             var r = new Regex(@"
                 (?<=[A-Z])(?=[A-Z][a-z]) |
@@ -19,12 +19,7 @@ namespace DgPersonal.Extensions.General.Classes
                  (?<=[A-Za-z])(?=[^A-Za-z])", RegexOptions.IgnorePatternWhitespace);
 
             var modelWithSpaces = r.Replace(pascalCaseStr, " ");
-            var finalChar = pascalCaseStr[^1..];
-            
-            if (usePluralName)
-                return finalChar == "s" ? $"{modelWithSpaces}es" : $"{modelWithSpaces}s";
-
-            return modelWithSpaces;
+            return usePluralName ? modelWithSpaces.Pluralize() : modelWithSpaces;
         }
         
         public static string Capitalize(this string str)
@@ -127,7 +122,7 @@ namespace DgPersonal.Extensions.General.Classes
                                    && value.Count(char.IsUpper) > 1;
 
                 if (isPascalCase)
-                    value = value.StringToPascalCase();
+                    value = value.SplitPascalCaseToString();
                 
                 var isLast = items.Count -1 == index;
                 sb.Append(value).Append(isLast ? "" : ", ");
